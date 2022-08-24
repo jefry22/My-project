@@ -118,6 +118,7 @@ height: 60px;
 .mobile-menu{
     display: block;
     position: absolute;
+    height: 100vh;
     top: 61px;
     left: 0;
     width: 100%;
