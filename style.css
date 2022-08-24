@@ -112,14 +112,9 @@ height: 60px;
     color: var(--hospital-green);
     
 }
-.mobile-menu{
-    display: none;
-}
 
-/* Mobile Responsive */
-@media (max-width:768px){
-    
 /* Mobile Menu */
+
 .mobile-menu{
     display: block;
     position: absolute;
@@ -168,15 +163,104 @@ height: 60px;
     right: 0;
     padding: 10px 20px;
 }
-.nav-right ul,
-.nav-left .email{
-    display: none;
-}
 .btn-menu{
     display: block;
     width: 20px;
 }
 .active-mobile{
     display: none;
+} 
+.btn-menu{
+    display: none;
 }
+/* ASIDE SHOPPING CART */
+aside{
+    width: 380px;
+    position: absolute;
+    right: 0;
+    top: 61px;
+    padding: 10px;
+    background-color: var(--color-white);
+    box-shadow: 1px 1px 3px 0px  var(--color-dark);
+}
+.container-shopping-cart{
+    width: 100%;
+}
+.container-header-cart{
+    display: flex;
+    padding: 10px;
+}
+.container-header-cart p{
+    margin-left: 20px;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+}
+.card-product{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-product figure{
+    margin: 0;
+    padding: 0;
+}
+.card-product img{
+    width: 90px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+.card-product p{
+    font-size: var(--font-size-md);
+    color: var(--very-light-pink);
+    font-weight: 300;
+}
+.card-product span{
+    font-weight: bold;
+    font-size: var(--font-size-md);
+}
+.card-product .btnclose{
+    width: 15px;
+}
+.container-shopping-total{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: var(--text-input-field);
+    border-radius: 10px;
+    padding: 8px 0px;
+}
+.container-shopping-total .total{
+    font-size: var(--font-size-sm);
+}
+.container-btn-checkout .btn-checkout{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 20px 0px;
+    border: none;
+    background-color: var(--hospital-green);
+    color: var(--color-white);
+    font-size: var(--font-size-md);
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width:768px){
+.btn-menu{
+    display: block;
+}
+.nav-right ul,
+.nav-left .email,
+.desktop-menu{
+    display: none;
+}
+
+}
+@media(min-width:641px){
+    .mobile-menu{
+        display: none;
+    }
 }
