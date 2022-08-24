@@ -264,6 +264,7 @@ aside{
     padding: 20px;
     display: block;
     z-index: 0;
+    box-shadow: none;
 }
 
 }
