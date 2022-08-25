@@ -13,6 +13,9 @@
     --font-size-md:16px;
     --font-size-lg:18px;
 }
+.inactive{
+    display: none;
+} 
 body{
     margin: 0;
     padding: 0;
@@ -83,16 +86,17 @@ height: 60px;
     justify-content: center;
     font-size: var(--font-size-sm);
 }
-
-/* Estilos del Desktop-Menu */
-.active{
-    display: none;
+.nav-left img{
+    cursor: pointer;
 }
+/* Estilos del Desktop-Menu */
+
 .desktop-menu{
     position: absolute;
     top:61px;
+    background-color: var(--color-white);
     right: 60px;
-    box-shadow: 1px 2px 2px 2px var(--very-light-pink);
+    box-shadow: 0px 0px 2px -1px var(--very-light-pink);
 }
 .desktop-menu ul li{
     text-align: end;
@@ -116,13 +120,11 @@ height: 60px;
 /* Mobile Menu */
 
 .mobile-menu{
-    display: block;
     position: absolute;
     height: 100vh;
     top: 61px;
     left: 0;
     width: 100%;
-    z-index: 2;
     background-color: var(--color-white);
 }
 .mobile-menu ul li{
@@ -170,9 +172,7 @@ height: 60px;
     display: block;
     width: 20px;
 }
-.active-mobile{
-    display: none;
-} 
+
 .btn-menu{
     display: none;
 }
@@ -251,6 +251,48 @@ aside{
     border-radius: 5px;
     cursor: pointer;
 }
+/* LIST PRODUCT CONTAINER */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 20px;
+    place-content: center;
+    margin-top: 20px;
+  }
+  .card-container {
+    width: 100%;
+  }
+  .card-container .img-product {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .card-container figure {
+    margin: 0;
+    padding: 0;
+  }
+  .info-product-img img {
+    width: 45px;
+  }
+  .info-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .info-product-details p {
+    margin: 0;
+  }
+  .info-product-details p:first-child {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+  }
+  .info-product-details p:last-child{
+      font-size: var(--font-size-md);
+      color: var(--color-dark);
+      font-weight: 500;
+  }
 @media (max-width:768px){
 .btn-menu{
     display: block;
@@ -262,8 +304,8 @@ aside{
 }
 aside{
     width: 90%;
-    padding: 20px;
-    z-index: 0;
+    padding: 0px 20px;
+
     box-shadow: none;
 }
 
