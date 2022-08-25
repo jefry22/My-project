@@ -8,6 +8,7 @@ const btnClose = document.querySelector('.btnClose');
 
 const btnCars = document.querySelector('.cars');
 const aside = document.querySelector('aside');
+const sectionProduct = document.querySelector('section')
 
 const productContainer = document.querySelector(".product-container");
 
@@ -36,10 +37,15 @@ function toggleMobileMenu(){
 function toggleAside(){
     const isMobileClose = mobileMenu.classList.contains('inactive');
     const isMenuDesktopClose = desktopMenu.classList.contains('inactive');
+    const isSectionProduct = sectionProduct.classList.contains('inactive');
 
-    if(!isMobileClose || !isMenuDesktopClose){
+    if(!isMobileClose || !isMenuDesktopClose || !isSectionProduct){
         mobileMenu.classList.add('inactive');
         desktopMenu.classList.add('inactive');
+        sectionProduct.classList.add('inactive');
+    }
+    if(!aside.classList.contains('inactive')){
+        sectionProduct.classList.remove('inactive');
     }
     aside.classList.toggle('inactive');
 }
