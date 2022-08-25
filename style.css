@@ -121,7 +121,6 @@ height: 60px;
 
 .mobile-menu{
     position: absolute;
-    height: 100vh;
     top: 61px;
     left: 0;
     width: 100%;
@@ -313,7 +312,6 @@ aside{
 
     box-shadow: none;
 }
-
 }
 @media(min-width:641px){
     .mobile-menu{

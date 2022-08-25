@@ -28,9 +28,19 @@ function toogleDestokpMenu(){
 }
 function toggleMobileMenu(){
     const isAsideClose = aside.classList.contains('inactive');
-    if(!isAsideClose){
-        aside.classList.add('inactive')
+    const isSectionProduct = sectionProduct.classList.contains('inactive');
+
+    if(!isAsideClose || !isSectionProduct){
+        aside.classList.add('inactive');
+        sectionProduct.classList.add('inactive');
     }
+
+    if(!mobileMenu.classList.contains('inactive')){
+      sectionProduct.classList.remove('inactive');
+    }
+    // }else if(mobileMenu.classList.contains('inactive')){
+    //   sectionProduct.classList.remove('inactive');
+    // }
 
     mobileMenu.classList.toggle('inactive');
 }
