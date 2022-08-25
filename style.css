@@ -294,6 +294,11 @@ aside{
       font-weight: 500;
   }
 @media (max-width:768px){
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    gap: 5px;
+}
 .btn-menu{
     display: block;
 }
