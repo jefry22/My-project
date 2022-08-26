@@ -7,23 +7,26 @@ const btnClose = document.querySelector('.btnClose');
 
 
 const btnCars = document.querySelector('.cars');
-const shoppingCart = document.querySelector('#shoppingCart');
+const shoppingCartAside = document.querySelector('#shoppingCart');
 const sectionProduct = document.querySelector('section')
 
 const productContainer = document.querySelector(".product-container");
+const productDetailsContainer = document.querySelector('#productDetail');
+const btnCloseProductDetail = document.querySelector('.close-detail');
 
 btnEmail.addEventListener('click',toogleDestokpMenu);
 btnMenu.addEventListener('click',toggleMobileMenu);
 btnClose.addEventListener('click',toggleMobileMenu);
+btnCloseProductDetail.addEventListener('click',closeProductDetail)
 btnCars.addEventListener('click',toggleAside);
 
 
 
 function toogleDestokpMenu(){
-    const isshoppingCartClose = shoppingCart.classList.contains('inactive');
+    const isshoppingCartAsideClose = shoppingCartAside.classList.contains('inactive');
     const isSectionProduct = sectionProduct.classList.contains('inactive');
-    if(!isshoppingCartClose){
-        shoppingCart.classList.add('inactive');
+    if(!isshoppingCartAsideClose){
+        shoppingCartAside.classList.add('inactive');
     }
     if(isSectionProduct){
       sectionProduct.classList.remove('inactive')
@@ -31,37 +34,47 @@ function toogleDestokpMenu(){
     desktopMenu.classList.toggle('inactive');
 }
 function toggleMobileMenu(){
-    const isshoppingCartClose = shoppingCart.classList.contains('inactive');
+    const isshoppingCartAsideClose = shoppingCartAside.classList.contains('inactive');
     const isSectionProduct = sectionProduct.classList.contains('inactive');
-
-    if(!isshoppingCartClose || !isSectionProduct){
-        shoppingCart.classList.add('inactive');
+    const isproductDetailsContainer =productDetailsContainer.classList.contains('inactive');
+    
+    if(!isshoppingCartAsideClose || !isSectionProduct || !isproductDetailsContainer){
+        shoppingCartAside.classList.add('inactive');
         sectionProduct.classList.add('inactive');
+        productDetailsContainer.classList.add('inactive');
     }
 
     if(!mobileMenu.classList.contains('inactive')){
       sectionProduct.classList.remove('inactive');
     }
-    // }else if(mobileMenu.classList.contains('inactive')){
-    //   sectionProduct.classList.remove('inactive');
-    // }
 
     mobileMenu.classList.toggle('inactive');
 }
 function toggleAside(){
     const isMobileClose = mobileMenu.classList.contains('inactive');
     const isMenuDesktopClose = desktopMenu.classList.contains('inactive');
-    const isSectionProduct = sectionProduct.classList.contains('inactive');
+    const isproductDetailsContainer =productDetailsContainer.classList.contains('inactive');
 
-    if(!isMobileClose || !isMenuDesktopClose){
+    if(!isMobileClose || !isMenuDesktopClose || !isproductDetailsContainer){
         mobileMenu.classList.add('inactive');
         desktopMenu.classList.add('inactive');
-        // sectionProduct.classList.add('inactive');
+        productDetailsContainer.classList.add('inactive');
     }
-    if(!shoppingCart.classList.contains('inactive')){
+    if(!shoppingCartAside.classList.contains('inactive')){
         sectionProduct.classList.remove('inactive');
     }
-    shoppingCart.classList.toggle('inactive');
+    shoppingCartAside.classList.toggle('inactive');
+}
+function openProductDetailAside(){
+  shoppingCartAside.classList.add('inactive');
+  productDetailsContainer.classList.remove('inactive');
+  
+  
+}
+function closeProductDetail(){
+  productDetailsContainer.classList.add('inactive'); 
+
+
 }
 
 const listProduct = [];
@@ -116,6 +129,9 @@ function createProduct(arr) {
 
     const figureProduct = document.createElement("figure");
     const productImage = document.createElement("img");
+
+    productImage.addEventListener('click',openProductDetailAside)
+
     productImage.classList.add("img-product");
     productImage.setAttribute("src", product.imagen);
     figureProduct.appendChild(productImage);
