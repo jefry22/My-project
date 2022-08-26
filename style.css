@@ -181,9 +181,11 @@ aside{
     position: absolute;
     right: 0;
     top: 61px;
-    padding: 10px;
     background-color: var(--color-white);
     box-shadow: 1px 1px 3px 0px  var(--color-dark);
+}
+#shoppingCart {
+    padding: 10px;
 }
 .container-shopping-cart{
     width: 100%;
@@ -250,6 +252,62 @@ aside{
     border-radius: 5px;
     cursor: pointer;
 }
+/* Product Details */
+
+#productDetail  figure{
+    margin: 0;
+    padding: 0;
+}
+.product-img figure img{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.product-img .close{
+    width:30px;
+    height: 30px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    top: 10px;
+    background-color: var(--color-white);
+}
+/* Product Info */
+.product-info{
+    padding: 20px;
+}
+.product-info p{
+    margin: 0;
+    font-size: var(--font-size-lg);
+    color: var(--color-dark);
+    font-weight: 300;
+    margin-bottom: 38px;
+}
+
+.product-info p:first-child{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.product-info p:nth-child(3){
+    font-size: var(--font-size-md);
+}
+.product-info .btn-add{
+    width: 100%;
+    border: none;
+    background-color: var(--hospital-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    border-radius: 20px;
+    padding: 8px;
+}
 /* LIST PRODUCT CONTAINER */
 .product-container {
     display: grid;
@@ -296,8 +354,17 @@ aside{
 .product-container {
     display: grid;
     grid-template-columns: repeat(2, 180px);
-    gap: 5px;
+    gap: 10px;
 }
+.info-product-details p:first-child{
+    font-size: var(--font-size-md);
+}
+.info-product-details p:last-child{
+    font-size: var(--font-size-sm);
+}
+.info-product-img img {
+    width: 30px;
+  }
 .btn-menu{
     display: block;
 }
@@ -306,16 +373,19 @@ aside{
 .desktop-menu{
     display: none;
 }
-aside{
-    width: 90%;
-    padding: 0px 20px;
 
+#shoppingCart{
+    width: 90%;
     box-shadow: none;
-}
+    position: fixed;
+    top: 61px;
+    margin: 0;
+    padding: 20px;
 }
 @media(min-width:641px){
     .mobile-menu{
         display: none;
     }
    
+}
 }

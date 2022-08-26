@@ -7,7 +7,7 @@ const btnClose = document.querySelector('.btnClose');
 
 
 const btnCars = document.querySelector('.cars');
-const aside = document.querySelector('aside');
+const shoppingCart = document.querySelector('#shoppingCart');
 const sectionProduct = document.querySelector('section')
 
 const productContainer = document.querySelector(".product-container");
@@ -20,18 +20,22 @@ btnCars.addEventListener('click',toggleAside);
 
 
 function toogleDestokpMenu(){
-    const isAsideClose = aside.classList.contains('inactive');
-    if(!isAsideClose){
-        aside.classList.add('inactive');
+    const isshoppingCartClose = shoppingCart.classList.contains('inactive');
+    const isSectionProduct = sectionProduct.classList.contains('inactive');
+    if(!isshoppingCartClose){
+        shoppingCart.classList.add('inactive');
+    }
+    if(isSectionProduct){
+      sectionProduct.classList.remove('inactive')
     }
     desktopMenu.classList.toggle('inactive');
 }
 function toggleMobileMenu(){
-    const isAsideClose = aside.classList.contains('inactive');
+    const isshoppingCartClose = shoppingCart.classList.contains('inactive');
     const isSectionProduct = sectionProduct.classList.contains('inactive');
 
-    if(!isAsideClose || !isSectionProduct){
-        aside.classList.add('inactive');
+    if(!isshoppingCartClose || !isSectionProduct){
+        shoppingCart.classList.add('inactive');
         sectionProduct.classList.add('inactive');
     }
 
@@ -49,15 +53,15 @@ function toggleAside(){
     const isMenuDesktopClose = desktopMenu.classList.contains('inactive');
     const isSectionProduct = sectionProduct.classList.contains('inactive');
 
-    if(!isMobileClose || !isMenuDesktopClose || !isSectionProduct){
+    if(!isMobileClose || !isMenuDesktopClose){
         mobileMenu.classList.add('inactive');
         desktopMenu.classList.add('inactive');
-        sectionProduct.classList.add('inactive');
+        // sectionProduct.classList.add('inactive');
     }
-    if(!aside.classList.contains('inactive')){
+    if(!shoppingCart.classList.contains('inactive')){
         sectionProduct.classList.remove('inactive');
     }
-    aside.classList.toggle('inactive');
+    shoppingCart.classList.toggle('inactive');
 }
 
 const listProduct = [];
